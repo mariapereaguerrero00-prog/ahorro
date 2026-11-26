@@ -1,0 +1,20 @@
+MERI’S SAVING · cómo instalarla en el iPhone
+
+Importante: iOS no instala .zip ni .ipa sin firmar. Esta carpeta es una web app (PWA)
+que se instala desde Safari y se abre a pantalla completa, con icono propio y sin conexión.
+
+OPCIÓN A · La más fácil (gratis, 2 minutos)
+1. Descomprime este zip en el ordenador.
+2. Entra en https://app.netlify.com/drop y arrastra la CARPETA descomprimida.
+3. Netlify te da un enlace https://algo.netlify.app
+4. Abre ese enlace en SAFARI en el iPhone > botón Compartir > "Añadir a pantalla de inicio".
+
+OPCIÓN B · GitHub Pages (gratis)
+1. Crea un repositorio nuevo y sube todos los archivos de esta carpeta.
+2. Settings > Pages > Deploy from branch > main / root.
+3. Abre la URL que te da en Safari y añádela a la pantalla de inicio.
+
+Notas
+- Hace falta que esté alojada en https (por eso no funciona abriendo index.html desde Archivos).
+- Los datos se guardan en el iPhone (en la app instalada). Si la desinstalas, se borran.
+- Para actualizarla: sube los archivos nuevos al mismo sitio y reabre la app.
