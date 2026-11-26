@@ -1,1 +1,14 @@
-{"name":"Meri’s saving","short_name":"Meri’s saving","start_url":"./index.html","scope":"./","display":"standalone","background_color":"#f4f2ee","theme_color":"#ffc2d6","lang":"es","icons":[{"src":"icons/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
+{
+  "name": "✰ meri's saving ✰",
+  "short_name": "meri's saving",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f2ee",
+  "theme_color": "#f4f2ee",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
+  ]
+}

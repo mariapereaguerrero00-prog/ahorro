@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Meri’s saving"><meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#1f3a4d">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
+<title>✰ meri's saving ✰</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="meri's saving">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f4f2ee">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Meri’s saving</title>
+<link rel="icon" type="image/png" href="icon-192.png">
 <style>
 :root{--bg:#f4f2ee;--card:#fffefc;--ink:#22303c;--soft:#7b8794;--line:#e3ded5;--acc:#1f3a4d;--sage:#b08d57;--on:#fff;--shadow:0 8px 24px rgba(30,40,50,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181d;--card:#1c222a;--ink:#ece8df;--soft:#9aa3ad;--line:#2c343e;--acc:#c9a96e;--sage:#c9a96e;--on:#14181d;--shadow:none;color-scheme:dark}}
@@ -14,8 +17,7 @@
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 Arial,Helvetica,sans-serif}
-main{max-width:1000px;margin:0 auto;padding:24px 16px 110px}
-html{-webkit-text-size-adjust:100%}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 60px}
 h1,h2{font-family:Arial,Helvetica,sans-serif;font-weight:600;margin:0}
 h1{font-size:32px;text-align:center;letter-spacing:.04em}
 h2{font-size:19px;margin-bottom:12px}
@@ -54,11 +56,10 @@ dialog{border:none;border-radius:22px;background:var(--card);color:var(--ink);ma
 dialog::backdrop{background:rgba(70,45,45,.45)}
 .bar{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin-top:8px}
 .bar i{display:block;height:100%;background:var(--sage)}
-@media(max-width:640px){input,select{font-size:16px}.stk table,.stk tbody,.stk tfoot{display:block;min-width:0!important}.stk thead{display:none}.stk tr{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 0;border-bottom:1px solid var(--line)}.stk td{display:block;padding:0}.stk td:first-child{grid-column:1/-1}.stk td:last-child:not([data-l]){grid-column:1/-1;text-align:right}.stk td[data-l]::before{content:attr(data-l);display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:2px}.stk tfoot tr{border:none}.card{padding:16px;border-radius:18px}}
-.tabs{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;gap:8px;margin:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line)}.tab{flex:1;max-width:220px}.stk td:empty{display:none}.tab{background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 22px;cursor:pointer;color:var(--soft)}.tab.on{background:var(--acc);color:var(--on);border-color:var(--acc)}.kpi{border:1px solid var(--line);border-radius:12px;padding:12px}.kpi b{display:block;font-size:20px;font-weight:600;margin-top:2px}.kpi small{color:var(--soft)}.tr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line)}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:18px}.tab{background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 22px;cursor:pointer;color:var(--soft)}.tab.on{background:var(--acc);color:var(--on);border-color:var(--acc)}.kpi{border:1px solid var(--line);border-radius:12px;padding:12px}.kpi b{display:block;font-size:20px;font-weight:600;margin-top:2px}.kpi small{color:var(--soft)}.tr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line)}
 </style></head><body><main>
-<h1>Meri’s saving</h1>
-<div class="tabs"><button class="tab on" data-tab="1">Presupuesto</button><button class="tab" data-tab="2">Estudio de ahorro</button></div>
+<h1 style="margin-bottom:18px">✰ meri's saving ✰</h1>
+<div class="tabs" style="flex-wrap:wrap"><button class="tab on" data-tab="1">Presupuesto</button><button class="tab" data-tab="3">¿En qué se va mi sueldo?</button><button class="tab" data-tab="2">Estudio de ahorro</button></div>
 <div class="month" id="mo"><button class="ghost" id="pv">‹</button><b id="mt"></b><button class="ghost" id="nx">›</button></div>
 <div id="t1"><div class="card"><h2>Ingresos y ahorro</h2><div class="row">
 <div><label>Sueldo fijo (€)</label><input type="number" id="fs" step="0.01"></div>
@@ -66,10 +67,11 @@ dialog::backdrop{background:rgba(70,45,45,.45)}
 <div><label>Objetivo de ahorro mensual (€)</label><input type="number" id="gl" step="0.01"></div></div>
 <div id="sv" class="note"></div><div class="bar"><i id="svb"></i></div></div>
 <div class="card"><h2>Categorías</h2><div id="cats"></div><button class="ghost" id="ac">+ Añadir categoría</button></div>
-<div class="card"><h2>Gastos fijos</h2><div class="tbl stk" id="fx"></div><p class="note">Se repiten cada mes. Si cambias algo, el cambio se mantiene para los meses siguientes.</p></div>
-<div class="card"><h2>Gastos variables</h2><div class="tbl stk" id="vr"></div><p class="note">Cada mes empieza en limpio.</p></div>
-<div class="card"><h2>Presupuesto semanal</h2><div class="tbl stk" id="wk"></div><p class="note">Semanas completas de lunes a domingo: cada una cuenta en el mes donde caen la mayoría de sus días. Pulsa sobre una semana para anotar tus gastos.</p></div>
-<div class="card"><h2>¿En qué se va mi sueldo?</h2><div class="donut"><div id="dn"></div><div id="lg"></div></div></div></div>
+<div class="card"><h2>Gastos fijos</h2><div class="tbl" id="fx"></div><p class="note">Se repiten cada mes. Si cambias algo, el cambio se mantiene para los meses siguientes.</p></div>
+<div class="card"><h2>Gastos variables</h2><div class="tbl" id="vr"></div><p class="note">Cada mes empieza en limpio.</p></div>
+<div class="card"><h2>Presupuesto semanal</h2><div class="tbl" id="wk"></div><p class="note">Pulsa sobre una semana para anotar tus gastos.</p></div>
+</div>
+<div id="t3" hidden><div class="card"><h2>¿En qué se va mi sueldo?</h2><div class="donut"><div id="dn"></div><div id="lg"></div></div></div></div>
 <div id="t2" hidden><div class="card"><h2>Objetivo de ahorro total</h2><div class="row"><div><label>Objetivo total (€)</label><input type="number" id="gt" step="0.01"></div><div><label>Ahorro que ya tienes (€)</label><input type="number" id="s0" step="0.01"></div></div></div><div id="st"></div></div>
 </main>
 <dialog id="dl"></dialog>
@@ -87,7 +89,7 @@ const getFixed=()=>fixedFor(M);
 let TAB=1;
 const sum=(a,f)=>a.reduce((s,x)=>s+(+f(x)||0),0);
 function stat(m){const f=sum(fixedFor(m),r=>r.r),v=sum(S.vari[m]||[],r=>r.r),w=sum(Object.values(S.weeks[m]||{}),x=>sum(x.items||[],r=>r.p)),inc=(+S.fs||0)+(+S.vs[m]||0),sp=f+v+w;return {m,inc,f,v,w,sp,sv:inc-sp}}
-function tabs(){$('#t1').hidden=TAB!==1;$('#t2').hidden=TAB!==2;$('#mo').hidden=TAB!==1;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',+b.dataset.tab===TAB))}
+function tabs(){$('#t1').hidden=TAB!==1;$('#t2').hidden=TAB!==2;$('#t3').hidden=TAB!==3;$('#mo').hidden=TAB===2;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',+b.dataset.tab===TAB))}
 function study(){$('#gt').value=S.gt||'';$('#s0').value=S.s0||'';
 const ks=[...new Set([...Object.keys(S.vs),...Object.keys(S.vari),...Object.keys(S.weeks)])].sort();
 const H=ks.map(stat).filter(x=>x.sp>0&&x.inc>0),n=H.length;
@@ -106,22 +108,21 @@ $('#st').innerHTML=`<div class="card"><h2>Estimación de ahorro</h2><div class="
 <div class="card"><h2>Historial</h2>${n?H.map(x=>`<div class="tr"><span style="text-transform:capitalize">${fm(x)}</span><span>Ingresos ${eur(x.inc)}</span><span>Gastos ${eur(x.sp)}</span><b>${eur(x.sv)}</b></div>`).join(''):'<p class="note">Añade ingresos y gastos reales de cada mes y aparecerán aquí.</p>'}</div>`}
 const ownFixed=()=>{if(!S.fixed[M])S.fixed[M]=JSON.parse(JSON.stringify(getFixed()));return S.fixed[M]};
 const vari=()=>S.vari[M]||(S.vari[M]=[]);
-const wl=r=>{const f=x=>x.toLocaleDateString('es-ES',{day:'numeric',month:'short'});return `del ${f(r[0])} al ${f(r[1])}`};
-function weeks(){const [y,m]=M.split('-').map(Number),w=[];let d=new Date(y,m-1,1);while(d.getDay()!==4)d.setDate(d.getDate()+1);
-for(;d.getMonth()===m-1;d.setDate(d.getDate()+7)){const s=new Date(d),e=new Date(d);s.setDate(d.getDate()-3);e.setDate(d.getDate()+3);w.push([s,e])}return w}
+function weeks(){const [y,m]=M.split('-').map(Number),n=new Date(y,m,0).getDate(),w=[];let s=1;
+for(let i=1;i<=n;i++){const dow=new Date(y,m-1,i).getDay();if(dow===0||i===n){w.push([s,i]);s=i+1}}return w}
 const wk=()=>{const W=weeks();return W.map((r,i)=>{const o=(S.weeks[M]||{})[i]||{b:0,items:[]};return {r,i,b:o.b,items:o.items}})};
 const wkData=i=>{S.weeks[M]=S.weeks[M]||{};return S.weeks[M][i]=S.weeks[M][i]||{b:0,items:[]}};
 const opts=sel=>S.cats.map(c=>`<option value="${c.id}"${c.id===sel?' selected':''}>${c.n}</option>`).join('');
 function tbl(rows,kind){let tb=0,tg=0,tr=0;
 const body=rows.map((r,i)=>{tb+=+r.b||0;tg+=+r.g||0;tr+=+r.r||0;
-return `<tr><td data-l="Nombre"><input value="${r.n||''}" data-k="${kind}" data-i="${i}" data-f="n"></td>
-<td data-l="Presupuesto"><input type="number" step="0.01" value="${r.b||''}" data-k="${kind}" data-i="${i}" data-f="b"></td>
-<td data-l="Gasto"><input type="number" step="0.01" value="${r.g||''}" data-k="${kind}" data-i="${i}" data-f="g"></td>
-<td data-l="Gasto real"><input type="number" step="0.01" value="${r.r||''}" data-k="${kind}" data-i="${i}" data-f="r"></td>
-<td data-l="Categoría"><select data-k="${kind}" data-i="${i}" data-f="c"><option value="">—</option>${opts(r.c)}</select></td>
+return `<tr><td><input value="${r.n||''}" data-k="${kind}" data-i="${i}" data-f="n"></td>
+<td><input type="number" step="0.01" value="${r.b||''}" data-k="${kind}" data-i="${i}" data-f="b"></td>
+<td><input type="number" step="0.01" value="${r.g||''}" data-k="${kind}" data-i="${i}" data-f="g"></td>
+<td><input type="number" step="0.01" value="${r.r||''}" data-k="${kind}" data-i="${i}" data-f="r"></td>
+<td><select data-k="${kind}" data-i="${i}" data-f="c"><option value="">—</option>${opts(r.c)}</select></td>
 <td><button class="x" data-del="${kind}" data-i="${i}">×</button></td></tr>`}).join('');
 return `<table><thead><tr><th>Nombre</th><th>Presupuesto</th><th>Gasto</th><th>Gasto real</th><th>Categoría</th><th></th></tr></thead><tbody>${body}</tbody>
-<tfoot><tr><td><button class="ghost" data-add="${kind}">+ Añadir</button></td><td data-l="Total presup.">${eur(tb)}</td><td data-l="Total gasto">${eur(tg)}</td><td data-l="Total real">${eur(tr)}</td><td></td><td></td></tr></tfoot></table>`}
+<tfoot><tr><td><button class="ghost" data-add="${kind}">+ Añadir</button></td><td>${eur(tb)}</td><td>${eur(tg)}</td><td>${eur(tr)}</td><td></td><td></td></tr></tfoot></table>`}
 function items(){const o=[];
 getFixed().forEach(r=>o.push({n:r.n,a:+r.r||0,c:r.c}));
 (S.vari[M]||[]).forEach(r=>o.push({n:r.n,a:+r.r||0,c:r.c}));
@@ -133,7 +134,7 @@ $('#cats').innerHTML=S.cats.map((c,i)=>`<span class="chip"><input type="color" v
 $('#fx').innerHTML=tbl(getFixed(),'fixed');$('#vr').innerHTML=tbl(vari(),'vari');
 const W=wk();let tb=0,tr=0;
 $('#wk').innerHTML=`<table style="min-width:420px"><thead><tr><th>Semana</th><th>Presupuesto</th><th>Gasto real</th></tr></thead><tbody>`+W.map(w=>{const r=w.items.reduce((s,x)=>s+(+x.p||0),0);tb+=+w.b||0;tr+=r;
-return `<tr><td><span class="wk" data-w="${w.i}">Semana ${w.i+1} <small>(${wl(w.r)})</small></span></td><td data-l="Presupuesto"><input type="number" step="0.01" value="${w.b||''}" data-wb="${w.i}"></td><td data-l="Gasto real">${eur(r)}</td></tr>`}).join('')+`</tbody><tfoot><tr><td>Total</td><td data-l="Total presup.">${eur(tb)}</td><td data-l="Total real">${eur(tr)}</td></tr></tfoot></table>`;
+return `<tr><td><span class="wk" data-w="${w.i}">Semana ${w.i+1} <small>(del ${w.r[0]} al ${w.r[1]})</small></span></td><td><input type="number" step="0.01" value="${w.b||''}" data-wb="${w.i}"></td><td>${eur(r)}</td></tr>`}).join('')+`</tbody><tfoot><tr><td>Total</td><td>${eur(tb)}</td><td>${eur(tr)}</td></tr></tfoot></table>`;
 const inc=(+S.fs||0)+(+S.vs[M]||0),it=items(),spent=it.reduce((s,x)=>s+x.a,0),left=inc-spent,g=+S.gl||0;
 $('#sv').textContent=`Ingresos ${eur(inc)} · Gastado ${eur(spent)} · Te queda ${eur(left)}`+(g?(left>=g?' · ¡objetivo de ahorro cumplido! ♡':` · te faltan ${eur(g-left)} para tu objetivo`):'');
 $('#svb').style.width=(g?Math.max(0,Math.min(100,left/g*100)):0)+'%';
@@ -146,7 +147,7 @@ const arcs=segs.map(s=>{const l=s.v/base*C,e=`<circle r="${R}" cx="110" cy="110"
 $('#dn').innerHTML=`<svg viewBox="0 0 220 220" width="100%"><circle r="${R}" cx="110" cy="110" fill="none" stroke="var(--line)" stroke-width="30"/>${arcs}<text x="110" y="106" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="var(--ink)">${eur(spent)}</text><text x="110" y="126" text-anchor="middle" font-size="10" fill="var(--soft)" letter-spacing="2">GASTADO</text></svg>`;
 $('#lg').innerHTML=segs.length?segs.map(s=>`<div class="leg" data-lg="${s.k}"><span class="dot" style="background:${s.c}"></span><b style="flex:1;font-weight:500">${s.n}</b><span>${(s.v/base*100).toFixed(1)}%</span><span style="color:var(--soft)">${eur(s.v)}</span></div>`+(open[s.k]&&s.it.length?`<div class="det">${s.it.map(x=>`<div><span>${x.n||'Sin nombre'}</span><span>${eur(x.a)}</span></div>`).join('')}</div>`:'')).join(''):'<p class="note">Añade gastos reales y verás aquí el reparto.</p>'}
 function modal(i){wkOpen=i;const w=wkData(i),W=weeks()[i];
-$('#dl').innerHTML=`<h2>Semana ${i+1} <small style="font-size:16px;color:var(--soft)">(${wl(W)})</small></h2><div class="tbl"><table style="min-width:0"><thead><tr><th>Gasto</th><th>Precio</th><th>Categoría</th><th></th></tr></thead><tbody>`+
+$('#dl').innerHTML=`<h2>Semana ${i+1} <small style="font-size:16px;color:var(--soft)">(del ${W[0]} al ${W[1]})</small></h2><div class="tbl"><table style="min-width:420px"><thead><tr><th>Gasto</th><th>Precio</th><th>Categoría</th><th></th></tr></thead><tbody>`+
 w.items.map((r,j)=>`<tr><td><input value="${r.n||''}" data-mi="${j}" data-f="n"></td><td><input type="number" step="0.01" value="${r.p||''}" data-mi="${j}" data-f="p"></td><td><select data-mi="${j}" data-f="c"><option value="">—</option>${opts(r.c)}</select></td><td><button class="x" data-md="${j}">×</button></td></tr>`).join('')+
 `</tbody><tfoot><tr><td><button class="ghost" id="ma">+ Añadir</button></td><td>${eur(w.items.reduce((s,x)=>s+(+x.p||0),0))}</td><td></td><td></td></tr></tfoot></table></div><p style="text-align:right;margin:12px 0 0"><button class="btn" id="mc">Cerrar</button></p>`;
 if(!$('#dl').open)$('#dl').showModal()}
@@ -173,5 +174,5 @@ else if(t.id==='pv'||t.id==='nx'){let [y,m]=M.split('-').map(Number);m+=t.id==='
 else return;
 save();render()});
 render();
-if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
 </script></body></html>

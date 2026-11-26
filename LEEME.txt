@@ -1,20 +1,36 @@
-MERI’S SAVING · cómo instalarla en el iPhone
+✰ meri's saving ✰  —  Cómo instalarla en el iPhone
+====================================================
 
-Importante: iOS no instala .zip ni .ipa sin firmar. Esta carpeta es una web app (PWA)
-que se instala desde Safari y se abre a pantalla completa, con icono propio y sin conexión.
+QUÉ HAY EN ESTA CARPETA
+- index.html ............ la app
+- manifest.webmanifest .. nombre, colores e iconos de la app
+- sw.js ................. permite abrirla sin conexión a internet
+- apple-touch-icon.png .. icono para la pantalla de inicio del iPhone
+- icon-192.png / icon-512.png  iconos en otros tamaños
 
-OPCIÓN A · La más fácil (gratis, 2 minutos)
-1. Descomprime este zip en el ordenador.
-2. Entra en https://app.netlify.com/drop y arrastra la CARPETA descomprimida.
-3. Netlify te da un enlace https://algo.netlify.app
-4. Abre ese enlace en SAFARI en el iPhone > botón Compartir > "Añadir a pantalla de inicio".
+PASOS
+1. Descomprime este zip en tu ordenador.
+2. Entra en github.com (crea una cuenta gratis si no la tienes).
+3. Pulsa "New repository", llámalo  meris-saving , márcalo como "Public"
+   y pulsa "Create repository".
+4. Pulsa "uploading an existing file" y arrastra TODOS los archivos de esta
+   carpeta (los archivos sueltos, no el zip ni la carpeta). Pulsa "Commit changes".
+5. Ve a Settings → Pages. En "Source" elige "Deploy from a branch",
+   rama "main", carpeta "/ (root)" y pulsa "Save".
+6. Espera 1-2 minutos y recarga. Arriba aparecerá tu dirección:
+   https://TU-USUARIO.github.io/meris-saving/
+7. En el iPhone, abre esa dirección con SAFARI.
+8. Pulsa Compartir (cuadrado con flecha) → "Añadir a pantalla de inicio".
+   Si aparece "Abrir como app web", déjalo activado. Pulsa "Añadir".
+9. Abre la app siempre desde el icono de la estrella.
 
-OPCIÓN B · GitHub Pages (gratis)
-1. Crea un repositorio nuevo y sube todos los archivos de esta carpeta.
-2. Settings > Pages > Deploy from branch > main / root.
-3. Abre la URL que te da en Safari y añádela a la pantalla de inicio.
+IMPORTANTE
+- Tus datos se guardan solo en tu iPhone, no en GitHub.
+- Si borras el icono de la pantalla de inicio, se borran también los datos.
+- La app de la pantalla de inicio y Safari guardan datos por separado:
+  apunta tus gastos siempre desde el icono.
 
-Notas
-- Hace falta que esté alojada en https (por eso no funciona abriendo index.html desde Archivos).
-- Los datos se guardan en el iPhone (en la app instalada). Si la desinstalas, se borran.
-- Para actualizarla: sube los archivos nuevos al mismo sitio y reabre la app.
+ACTUALIZAR LA APP
+Sube el nuevo index.html al repositorio (Add file → Upload files) para
+sustituir el anterior. Abre la app con conexión a internet y se
+actualizará sola; tus datos se mantienen.
